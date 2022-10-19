@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- BABEL  -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>React cdn</title>
+</head>
+
+<body>
+    <div id="banner">
+
+    </div>
+
+    <footer>
+        <p>
+            footer
+        </p>
+    </footer>
+
+    <script type="text/babel">
+        const Banner = () => {
+            const title = "Welcome to my website"
+            const subtitle = "This is a website for loading react"
+            const address = "https://www.google.com"
+
+            function alert_click() {
+                alert("Button was clicked")
+            }
+
+            const anon = (e) => {
+                alert(e.target)
+            }
+
+            return (
+                <div className="banner">
+                    <h2> { title.toUpperCase() } </h2>
+                    <p> { subtitle } </p>
+                    
+                    <p> Today's date is: { new Date().toDateString() } </p>
+                    <p> Random number: { Math.random() * 100 }</p>
+                    
+                    <a href={address} > Google </a>
+                    
+                    <button onClick={alert_click} > Click me </button>
+                    <button onClick={anon} > Anon on click </button>
+                </div>
+            )
+        }
+
+        // render the component to the DOM
+        ReactDOM.render(<Banner />, document.getElementById("banner"))
+    </script>
+
+</body>
+
+</html>
